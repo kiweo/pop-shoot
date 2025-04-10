@@ -7,6 +7,7 @@ export const SHIELDMETALSPRITE = document.getElementById('shieldmetal');
 export const SHIELDUNDERFIRESPRITE = document.getElementById('shieldunderfire');
 export const SHIELDEMPSPRITE = document.getElementById('shieldemp');
 export const SHIELDINVINCIBILITYSPRITE = document.getElementById('shieldinvincibility');
+export const SHIELDGRENADESPRITE = document.getElementById('shieldgrenade');
 
 // JET FLAME
 export const FLAME0SPRITE = document.getElementById('flame0');

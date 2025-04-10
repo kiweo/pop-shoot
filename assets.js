@@ -73,6 +73,7 @@ const images = [
     { src: 'sprites/player/shieldemp.png', id: 'shieldemp' },
     { src: 'sprites/player/shieldunderfire.png', id: 'shieldunderfire' },
     { src: 'sprites/player/shieldinvincibility.png', id: 'shieldinvincibility' },
+    { src: 'sprites/player/shieldgrenade.png', id: 'shieldgrenade' },
     { src: 'sprites/player/flame0.png', id: 'flame0' },
     { src: 'sprites/player/flame1.png', id: 'flame1' },
     { src: 'sprites/player/flame2.png', id: 'flame2' },

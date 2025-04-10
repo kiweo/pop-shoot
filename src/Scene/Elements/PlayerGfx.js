@@ -1,5 +1,5 @@
 import { game } from '../../../app.js';
-import { SHIELDEMPSPRITE, SHIELDINVINCIBILITYSPRITE } from '../../Assets/Player.js';
+import { SHIELDEMPSPRITE, SHIELDGRENADESPRITE, SHIELDINVINCIBILITYSPRITE } from '../../Assets/Player.js';
 import { InputActions } from '../../Logic/Motion/InputActions.js';
 import { SceneUtils } from '../SceneUtils.js';
 
@@ -45,6 +45,7 @@ export class PlayerGfx {
             );
         }
 
+        // emp shield
         if (game.player.shield.isCharged() && game.itemactioncontroller.emp) {
             game.scene.ctx.drawImage(
                 SHIELDEMPSPRITE,
@@ -52,6 +53,15 @@ export class PlayerGfx {
                 SceneUtils.offsetCoordinates(game.player).y -
                     EMP_SHIELD_Y_OFFSET +
                     game.weathercontroller.glitchOffset.y,
+            );
+        }
+
+        // grenade shield
+        if (game.player.shield.isCharged() && game.player.grenade.isReady) {
+            game.scene.ctx.drawImage(
+                SHIELDGRENADESPRITE,
+                SceneUtils.offsetCoordinates(game.player).x + game.weathercontroller.glitchOffset.x,
+                SceneUtils.offsetCoordinates(game.player).y + game.weathercontroller.glitchOffset.y,
             );
         }
     }
