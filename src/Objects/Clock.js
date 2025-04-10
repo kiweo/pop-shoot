@@ -24,11 +24,7 @@ export class Clock {
         this.active = true;
         game.state.stopSlowmo();
         game.audiocontroller.updateMusic();
-        this.startCountdown();
-    }
-
-    // countdown until "active" state ends
-    startCountdown() {
+        // start counting down
         setTimeout(() => {
             this.deactivate();
             this.startCharging();

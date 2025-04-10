@@ -6,7 +6,7 @@ const SPRITE = [SHELL0SPRITE, SHELL1SPRITE, SHELL2SPRITE];
 const SPEED = 20;
 
 const SPREAD = 15; // horizontal spread
-const TRAVELDISTANCE = 275; // distance in px from starting y-coordinate
+const TRAVELDISTANCE = 350; // distance in px from starting y-coordinate
 
 export class Shell extends BlueLaser {
     constructor() {

@@ -28,10 +28,8 @@ export class Shotgun {
         this.charge = 0;
         SceneUtils.shakeScreen(4, 0.5);
         game.audiocontroller.playSound('reload');
-        this.fireShells();
-    }
 
-    fireShells() {
+        // fire shells
         for (let i = 0; i < 100; i += 5) {
             setTimeout(() => {
                 game.bluelasers.add(new Shell());
