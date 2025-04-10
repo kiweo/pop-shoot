@@ -23,7 +23,7 @@ export class ItemDropController {
 
         // POOLS PREPARATION
 
-        this.pool1 = [ITEMS.uranium, ITEMS.timefreeze];
+        this.pool1 = [ITEMS.uranium, ITEMS.timefreeze, ITEMS.emp, ITEMS.metalshield];
         this.pool2 = [ITEMS.clock, ITEMS.greed, ITEMS.loopers];
 
         this.randomfrompool1 = this.pool1[randomInRange(0, this.pool1.length - 1)];
@@ -35,6 +35,8 @@ export class ItemDropController {
         this.itemPool = [
             this.randomfrompool1,
             this.randomfrompool2,
+            ITEMS.grenade,
+            ITEMS.slicer,
             ITEMS.darts,
             ITEMS.seekers,
             ITEMS.toxic,
@@ -44,8 +46,6 @@ export class ItemDropController {
             ITEMS.nitrogen,
             ITEMS.airstrike,
             ITEMS.bomb,
-            ITEMS.emp,
-            ITEMS.metalshield,
         ];
 
         // add 'repeated' property only to repeatable items,

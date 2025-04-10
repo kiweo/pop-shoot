@@ -3,14 +3,17 @@ import { Movement } from '../../Logic/Motion/Movement.js';
 
 const DURATION = 20;
 const SPEED = 5;
+const CRITSPEED = 0.5;
+const CRITDURATION = 50;
 
 export class DamageNumber {
-    constructor(x, y, damage) {
+    constructor(x, y, damage, crit) {
         this.x = x;
         this.y = y;
 
-        this.speed = SPEED;
-        this.duration = DURATION;
+        this.crit = crit;
+        this.speed = crit ? CRITSPEED : SPEED;
+        this.duration = crit ? CRITDURATION : DURATION;
         this.text = Math.round(damage);
         this.direction = randomInRange(0, 360);
     }

@@ -54,6 +54,7 @@ import {
     ICUSOUND,
     APPEARSOUND,
     SNIPERSHOTSOUND,
+    BEEPSOUND,
 } from '../../Assets/Audio.js';
 
 const MUSIC = {
@@ -85,6 +86,10 @@ const SOUNDS = {
     },
     appear: {
         audio: APPEARSOUND,
+        volume: 1,
+    },
+    beep: {
+        audio: BEEPSOUND,
         volume: 1,
     },
     beepRed: {
@@ -260,6 +265,7 @@ const SOUNDS = {
     },
     swoosh: {
         audio: SWOOSHSOUND,
+        clone: true,
         volume: 1,
     },
     vortex: {

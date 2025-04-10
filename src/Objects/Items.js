@@ -55,6 +55,12 @@ import {
     SHOTGUN_ICON,
     SHOTGUN_PAUSE,
     SHOTGUN_NOTIFICATION,
+    SLICER_ICON,
+    SLICER_PAUSE,
+    SLICER_NOTIFICATION,
+    GRENADE_ICON,
+    GRENADE_PAUSE,
+    GRENADE_NOTIFICATION,
 } from '../Assets/Hud.js';
 
 export const ITEMS = {
@@ -99,6 +105,13 @@ export const ITEMS = {
         icon: GREED_ICON,
         pause: GREED_PAUSE,
         notification: GREED_NOTIFICATION,
+    },
+    grenade: {
+        name: 'grenade',
+        activate: () => (game.player.grenade.owned = true),
+        icon: GRENADE_ICON,
+        pause: GRENADE_PAUSE,
+        notification: GRENADE_NOTIFICATION,
     },
     loopers: {
         name: 'loopers',
@@ -148,6 +161,13 @@ export const ITEMS = {
         icon: SEEKERS_ICON,
         pause: SEEKERS_PAUSE,
         notification: SEEKERS_NOTIFICATION,
+    },
+    slicer: {
+        name: 'slicer',
+        activate: () => (game.itemactioncontroller.slicer = true),
+        icon: SLICER_ICON,
+        pause: SLICER_PAUSE,
+        notification: SLICER_NOTIFICATION,
     },
     shotgun: {
         name: 'shotgun',

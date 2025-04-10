@@ -114,7 +114,7 @@ export class Fk77 extends Enemy {
 
     soften() {
         this.hardened = false;
-        game.audiocontroller.playSound('swoosh');
+        game.audiocontroller.playSound('beep');
         SceneUtils.flashScreen();
         this.sprite = FK77SPRITE;
         SceneUtils.shakeScreen(3, 0.5);
@@ -122,7 +122,7 @@ export class Fk77 extends Enemy {
 
     harden() {
         this.hardened = true;
-        game.audiocontroller.playSound('swoosh');
+        game.audiocontroller.playSound('beep');
         SceneUtils.flashScreen();
         this.sprite = FK77HARDENEDSPRITE;
         SceneUtils.shakeScreen(3, 0.5);

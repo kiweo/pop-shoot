@@ -36,6 +36,8 @@ export const SEEKERS_NOTIFICATION = document.getElementById('seekers_notificatio
 export const CLOCK_NOTIFICATION = document.getElementById('clock_notification');
 export const AIRSTRIKE_NOTIFICATION = document.getElementById('airstrike_notification');
 export const SHOTGUN_NOTIFICATION = document.getElementById('shotgun_notification');
+export const SLICER_NOTIFICATION = document.getElementById('slicer_notification');
+export const GRENADE_NOTIFICATION = document.getElementById('grenade_notification');
 
 // UPGRADES PAUSE DESCRIPTIONS
 export const BOMBS_PAUSE = document.getElementById('bombs_pause');
@@ -56,6 +58,8 @@ export const SEEKERS_PAUSE = document.getElementById('seekers_pause');
 export const CLOCK_PAUSE = document.getElementById('clock_pause');
 export const AIRSTRIKE_PAUSE = document.getElementById('airstrike_pause');
 export const SHOTGUN_PAUSE = document.getElementById('shotgun_pause');
+export const SLICER_PAUSE = document.getElementById('slicer_pause');
+export const GRENADE_PAUSE = document.getElementById('grenade_pause');
 
 // UPGRADES ICONS
 export const BOMBS_ICON = document.getElementById('bombs_icon');
@@ -76,3 +80,5 @@ export const SEEKERS_ICON = document.getElementById('seekers_icon');
 export const CLOCK_ICON = document.getElementById('clock_icon');
 export const AIRSTRIKE_ICON = document.getElementById('airstrike_icon');
 export const SHOTGUN_ICON = document.getElementById('shotgun_icon');
+export const SLICER_ICON = document.getElementById('slicer_icon');
+export const GRENADE_ICON = document.getElementById('grenade_icon');

@@ -4,6 +4,7 @@ import { randomInRange } from '../Logic/Helpers.js';
 const FONTNAME = 'thaleahfatmedium';
 const WHITE = '#FFFFFF';
 const YELLOW = '#FFD800';
+const PINK = '#FF2975';
 
 export class SceneUtils {
     static drawBigBar(x, y, width, height, ratio) {
@@ -30,8 +31,8 @@ export class SceneUtils {
         game.scene.ctx.fillText(text, x, y);
     }
 
-    static drawCenteredText(text, x, y, fontsize) {
-        SceneUtils.setColor(WHITE);
+    static drawCenteredText(text, x, y, fontsize, crit) {
+        SceneUtils.setColor(crit ? PINK : WHITE);
         game.scene.ctx.textAlign = 'center';
         game.scene.ctx.font = `${fontsize}px ${FONTNAME}`;
         game.scene.ctx.fillText(text, x, y);

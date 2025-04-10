@@ -1,9 +1,12 @@
 import { game } from '../../../app.js';
+import { DamageNumber } from '../../Effects/Misc/DamageNumber.js';
+import { Slash } from '../../Effects/Misc/Slash.js';
 import { Airstrike } from '../../Lasers/Friendly/Airstrike.js';
 import { BlueLaser } from '../../Lasers/Friendly/BlueLaser.js';
 import { Dart } from '../../Lasers/Friendly/Dart.js';
 import { Rocket } from '../../Lasers/Friendly/Rocket.js';
 import { Seeker } from '../../Lasers/Friendly/Seeker.js';
+import { SceneUtils } from '../../Scene/SceneUtils.js';
 import { getClosestEnemyTo, randomInRange } from '../Helpers.js';
 
 // OFFENSIVE ITEMS MODIFIERS
@@ -16,6 +19,8 @@ const EMPRATE = 0.2; // damage multiplier dealt by emp to enemies when player is
 const MACHINEGUNRATE = 110; // shooting-rate of the machine gun. lower = faster (rate without upgrade is 150)
 const ROCKETCHANCE = 15; // % of firing a rocket
 const ROCKETDAMAGE = 3; // damage multiplier dealth by rocket (1 = full damage)
+const SLICERCHANCE = 5; // % of dealing slicer crit
+const SLICERRATE = 4; // damage multiplier dealt by slicer
 const SEEKERRATE = 0.5; // damage multiplier dealt by seekers (1 = full damage)
 const SPRAYDISTANCE = 5; // distance between laser streams when spray upgrade is acquired
 const STUNTIME = 1250; // time to stun enemies in ms
@@ -45,11 +50,13 @@ export class ItemActionController {
         this.darts = false;
         this.emp = false;
         this.greed = false;
+        this.grenade = false;
         this.loopers = false;
         this.machinegun = false;
         this.nitrogen = false;
         this.metalshield = false;
         this.rocket = false;
+        this.slicer = false;
         this.toxic = false;
         this.seekers = false;
         this.uranium = false;
@@ -66,6 +73,8 @@ export class ItemActionController {
         this.nitrogenrate = NITROGENRATE;
         this.rocketdamage = ROCKETDAMAGE;
         this.rocketchance = ROCKETCHANCE;
+        this.slicerchance = SLICERCHANCE;
+        this.slicerrate = SLICERRATE;
         this.seekerrate = SEEKERRATE;
         this.stuntime = STUNTIME;
         this.toxicrate = TOXICRATE;
@@ -160,6 +169,17 @@ export class ItemActionController {
             else {
                 game.bluelasers.add(new weapon(direction + SPRAYDISTANCE * spraycount));
             }
+        }
+    }
+
+    slice(laser, enemy) {
+        const slicerroll = randomInRange(0, 100);
+        if (slicerroll < this.slicerchance) {
+            game.audiocontroller.playSound('swoosh');
+            game.effects.add(new Slash(enemy.x, enemy.y, true));
+            game.effects.add(new DamageNumber(enemy.x, enemy.y, laser.damage * this.slicerrate, true));
+            SceneUtils.shakeScreen(2, 0.5);
+            enemy.takeDamage(laser.damage * this.slicerrate);
         }
     }
 

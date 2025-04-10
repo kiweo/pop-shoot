@@ -20,6 +20,10 @@ export class CollisionActions {
         game.effects.add(new Slash(enemy.x, enemy.y));
         laser.shatter();
 
+        if (game.itemactioncontroller.slicer) {
+            game.itemactioncontroller.slice(laser, enemy);
+        }
+
         if (game.itemactioncontroller.bomb) {
             game.itemactioncontroller.bombAll(laser);
         }
@@ -38,6 +42,9 @@ export class CollisionActions {
             SceneUtils.flashScreen();
             enemy.takeDamage(enemy.hp);
             game.player.shield.deplete();
+            if (game.player.grenade.isReady) {
+                game.player.grenade.blow();
+            }
             if (game.itemactioncontroller.emp) {
                 game.itemactioncontroller.blowEmp();
             }
@@ -53,6 +60,9 @@ export class CollisionActions {
             SceneUtils.flashScreen();
             firelaser.shatter();
             game.player.shield.deplete();
+            if (game.player.grenade.isReady) {
+                game.player.grenade.blow();
+            }
             if (game.itemactioncontroller.emp) {
                 game.itemactioncontroller.blowEmp();
             }

@@ -8,6 +8,7 @@ import { Animation } from '../../Effects/Misc/Animation.js';
 import { SceneUtils } from '../../Scene/SceneUtils.js';
 import { Shotgun } from '../../Objects/Shotgun.js';
 import { CANVAS } from '../../Assets/Other.js';
+import { Grenade } from '../../Objects/Grenade.js';
 
 const RADIUS = 13; // player hitbox radius. 13 matches the current sprite
 const SPEED = 6; // player movement speed
@@ -25,6 +26,7 @@ export class Player {
         this.shield = new Shield();
         this.clock = new Clock();
         this.shotgun = new Shotgun();
+        this.grenade = new Grenade();
     }
 
     move() {

@@ -170,6 +170,15 @@ export class HudGfx {
                     ICONTEXT_FONT,
                 );
             }
+            // grenade status
+            if (item.name === 'grenade') {
+                SceneUtils.drawCenteredText(
+                    game.player.grenade.isReady ? '' : game.player.grenade.countdown,
+                    currentx + ICONTEXT_SHIFT,
+                    ICONTEXT_Y,
+                    ICONTEXT_FONT,
+                );
+            }
             // shotgun
             if (item.name === 'shotgun') {
                 SceneUtils.drawBigBar(

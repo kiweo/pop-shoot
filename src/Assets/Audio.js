@@ -22,6 +22,7 @@ export const PHEWSOUND = document.getElementById('phew_sound');
 
 // MISC
 export const LASERSOUND = document.getElementById('laser_sound');
+export const BEEPSOUND = document.getElementById('beep_sound');
 export const BEEPREDSOUND = document.getElementById('beep_red_sound');
 export const BEEPORANGESOUND = document.getElementById('beep_orange_sound');
 export const HITMETALSOUND = document.getElementById('hitmetal_sound');
