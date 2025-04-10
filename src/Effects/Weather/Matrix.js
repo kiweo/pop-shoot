@@ -1,38 +1,8 @@
-import {
-    MATRIX0SPRITE,
-    MATRIX1SPRITE,
-    MATRIX2SPRITE,
-    MATRIX3SPRITE,
-    MATRIX4SPRITE,
-    MATRIX5SPRITE,
-    MATRIX6SPRITE,
-    MATRIX7SPRITE,
-    MATRIX8SPRITE,
-    MATRIX9SPRITE,
-    MATRIX10SPRITE,
-    MATRIX11SPRITE,
-    MATRIX12SPRITE,
-} from '../../Assets/Effects.js';
 import { CANVAS } from '../../Assets/Other.js';
 import { game } from '../../../app.js';
 import { randomInRange } from '../../Logic/Helpers.js';
 import { SceneUtils } from '../../Scene/SceneUtils.js';
-
-const SPRITE = [
-    MATRIX0SPRITE,
-    MATRIX1SPRITE,
-    MATRIX2SPRITE,
-    MATRIX3SPRITE,
-    MATRIX4SPRITE,
-    MATRIX5SPRITE,
-    MATRIX6SPRITE,
-    MATRIX7SPRITE,
-    MATRIX8SPRITE,
-    MATRIX9SPRITE,
-    MATRIX10SPRITE,
-    MATRIX11SPRITE,
-    MATRIX12SPRITE,
-];
+import { WEATHERS } from '../../Assets/Effects.js';
 
 const GLITCHFREQUENCY = 1000; // in ticks, higher = longer
 
@@ -42,13 +12,13 @@ export class Matrix {
         this.y = CANVAS.height / 2;
         this.ticks = 0;
         this.duration = 1;
-        this.sprite = SPRITE[this.ticks % SPRITE.length];
+        this.sprite = WEATHERS.matrix[this.ticks % WEATHERS.matrix.length];
         game.audiocontroller.playSound('matrix');
     }
 
     move() {
         this.ticks++;
-        this.sprite = SPRITE[this.ticks % SPRITE.length];
+        this.sprite = WEATHERS.matrix[this.ticks % WEATHERS.matrix.length];
 
         if (this.ticks % GLITCHFREQUENCY === 0) {
             SceneUtils.shakeScreen(1, 0.5);

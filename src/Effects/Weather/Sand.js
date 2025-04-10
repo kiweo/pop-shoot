@@ -1,29 +1,7 @@
-import {
-    SAND0SPRITE,
-    SAND1SPRITE,
-    SAND2SPRITE,
-    SAND3SPRITE,
-    SAND4SPRITE,
-    SAND5SPRITE,
-    SAND6SPRITE,
-    SAND7SPRITE,
-    SAND8SPRITE,
-} from '../../Assets/Effects.js';
 import { CANVAS } from '../../Assets/Other.js';
 import { game } from '../../../app.js';
 import { SceneUtils } from '../../Scene/SceneUtils.js';
-
-const SPRITE = [
-    SAND0SPRITE,
-    SAND1SPRITE,
-    SAND2SPRITE,
-    SAND3SPRITE,
-    SAND4SPRITE,
-    SAND5SPRITE,
-    SAND6SPRITE,
-    SAND7SPRITE,
-    SAND8SPRITE,
-];
+import { WEATHERS } from '../../Assets/Effects.js';
 
 const MIRAGEFREQUENCY = 1000; // in ticks, higher = longer
 
@@ -33,13 +11,13 @@ export class Sand {
         this.y = CANVAS.height / 2;
         this.ticks = 0;
         this.duration = 1;
-        this.sprite = SPRITE[this.ticks % SPRITE.length];
+        this.sprite = WEATHERS.sand[this.ticks % WEATHERS.sand.length];
         game.audiocontroller.playSound('sand');
     }
 
     move() {
         this.ticks++;
-        this.sprite = SPRITE[this.ticks % SPRITE.length];
+        this.sprite = WEATHERS.sand[this.ticks % WEATHERS.sand.length];
 
         if (this.ticks % MIRAGEFREQUENCY === 0) {
             SceneUtils.shakeScreen(500, 0.25);

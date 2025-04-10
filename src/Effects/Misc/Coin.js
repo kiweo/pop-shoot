@@ -2,18 +2,8 @@ import { randomInRange } from '../../Logic/Helpers.js';
 import { Movement } from '../../Logic/Motion/Movement.js';
 import { game } from '../../../app.js';
 import { Animation } from './Animation.js';
-import {
-    COINSPIN0,
-    COINSPIN1,
-    COINSPIN2,
-    COINSPIN3,
-    COINSPIN4,
-    COINSPIN5,
-    COINSPIN6,
-    COINSPIN7,
-} from '../../Assets/Animations.js';
+import { ANIMATIONS } from '../../Assets/Animations.js';
 
-const SPRITE = [COINSPIN0, COINSPIN1, COINSPIN2, COINSPIN3, COINSPIN4, COINSPIN5, COINSPIN6, COINSPIN7];
 const RADIUS = 10;
 
 const FLOATSPEED = 1.5;
@@ -24,8 +14,8 @@ export class Coin {
         this.x = x;
         this.y = y;
 
-        this.spriteIndex = randomInRange(0, SPRITE.length - 1);
-        this.sprite = SPRITE[this.spriteIndex];
+        this.spriteIndex = randomInRange(0, ANIMATIONS.coin_spin.length - 1);
+        this.sprite = ANIMATIONS.coin_spin[this.spriteIndex];
         this.radius = RADIUS;
 
         // floating phase
@@ -41,7 +31,7 @@ export class Coin {
 
         // spinning animation
         this.spinAnimation = setInterval(() => {
-            this.sprite = SPRITE[this.spriteIndex % SPRITE.length];
+            this.sprite = ANIMATIONS.coin_spin[this.spriteIndex % ANIMATIONS.coin_spin.length];
             this.spriteIndex++;
         }, 20);
 
