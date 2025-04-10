@@ -1,3 +1,5 @@
+<img src="https://github.com/kiweo/pop-shoot-assets/blob/main/banner.png" alt="banner">
+
 ## pop-shoot
 
 A synthwave styled space shooter, inspired by the 80s arcades. Written in plain Javascript.  
@@ -25,6 +27,11 @@ Useful keybindings are provided in order to jump around the game without having 
 - Spawn RedPackage: `R` OrangePackage: `O`
 - Toggle weather: `V`
 - Respawn: `P`
+
+### assets
+
+This repository only contains the game's source code.  
+The assets are found [somewhere else](https://github.com/kiweo/pop-shoot-assets).
 
 ### license
 
