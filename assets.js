@@ -382,6 +382,7 @@ const audio = [
     { src: 'soundfx/beep_red.ogg', id: 'beep_red_sound', type: 'audio/mpeg' },
     { src: 'soundfx/beep_orange.ogg', id: 'beep_orange_sound', type: 'audio/mpeg' },
     { src: 'soundfx/reload.ogg', id: 'reload_sound', type: 'audio/mpeg' },
+    { src: 'soundfx/ready.ogg', id: 'ready_sound', type: 'audio/mpeg' },
     { src: 'soundfx/hit.ogg', id: 'hit_sound', type: 'audio/mpeg' },
     { src: 'soundfx/hitquad.ogg', id: 'hitquad_sound', type: 'audio/mpeg' },
     { src: 'soundfx/hitmetal.ogg', id: 'hitmetal_sound', type: 'audio/mpeg' },

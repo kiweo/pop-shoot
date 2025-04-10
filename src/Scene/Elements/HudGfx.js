@@ -90,6 +90,7 @@ const PROGRESSBAR_Y = 475;
 const PROGRESSBAR_X_OFFSET = 3;
 const PROGRESSBAR_WIDTH = 29;
 const PROGRESSBAR_HEIGHT = 2;
+const PROGRESSBAR_READY_Y_OFFSET = 12;
 
 export class HudGfx {
     static drawStageTimeCash() {
@@ -170,12 +171,12 @@ export class HudGfx {
                     PROGRESSBAR_HEIGHT,
                     game.player.clock.chargeRatio,
                 );
-                // SceneUtils.drawCenteredText(
-                //     game.player.clock.active ? '!' : game.player.clock.isReady ? '' : game.player.clock.countdown,
-                //     currentx + ICONTEXT_SHIFT,
-                //     ICONTEXT_Y,
-                //     ICONTEXT_FONT,
-                // );
+                SceneUtils.drawCenteredText(
+                    game.player.clock.isReady ? '!' : '',
+                    currentx + ICONTEXT_SHIFT,
+                    ICONTEXT_Y - PROGRESSBAR_READY_Y_OFFSET,
+                    ICONTEXT_FONT,
+                );
             }
             // grenade status
             if (item.name === 'grenade') {
@@ -186,12 +187,12 @@ export class HudGfx {
                     PROGRESSBAR_HEIGHT,
                     game.player.grenade.chargeRatio,
                 );
-                // SceneUtils.drawCenteredText(
-                //     game.player.grenade.isReady ? '' : game.player.grenade.countdown,
-                //     currentx + ICONTEXT_SHIFT,
-                //     ICONTEXT_Y,
-                //     ICONTEXT_FONT,
-                // );
+                SceneUtils.drawCenteredText(
+                    game.player.grenade.isReady ? '!' : '',
+                    currentx + ICONTEXT_SHIFT,
+                    ICONTEXT_Y - PROGRESSBAR_READY_Y_OFFSET,
+                    ICONTEXT_FONT,
+                );
             }
             // shotgun
             if (item.name === 'shotgun') {
@@ -201,6 +202,12 @@ export class HudGfx {
                     PROGRESSBAR_WIDTH,
                     PROGRESSBAR_HEIGHT,
                     game.player.shotgun.chargeRatio,
+                );
+                SceneUtils.drawCenteredText(
+                    game.player.shotgun.isLoaded() ? '!' : '',
+                    currentx + ICONTEXT_SHIFT,
+                    ICONTEXT_Y - PROGRESSBAR_READY_Y_OFFSET,
+                    ICONTEXT_FONT,
                 );
             }
             currentx += ICON_GAP;

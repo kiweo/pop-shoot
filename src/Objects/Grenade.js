@@ -31,6 +31,7 @@ export class Grenade {
                 this.charge++;
             }
             if (this.charge >= CHARGING_TIME) {
+                game.audiocontroller.playSound('ready');
                 clearInterval(this.charger);
             }
         }, 1000);

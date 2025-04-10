@@ -55,6 +55,7 @@ import {
     APPEARSOUND,
     SNIPERSHOTSOUND,
     BEEPSOUND,
+    READYSOUND,
 } from '../../Assets/Audio.js';
 
 const MUSIC = {
@@ -206,6 +207,11 @@ const SOUNDS = {
         audio: RAYSOUND,
         clone: true,
         volume: 0.6,
+    },
+    ready: {
+        audio: READYSOUND,
+        clone: true,
+        volume: 1,
     },
     reload: {
         audio: RELOADSOUND,

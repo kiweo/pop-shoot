@@ -48,6 +48,7 @@ export const HARVEYSOUND = document.getElementById('harvey_sound');
 export const ICUSOUND = document.getElementById('icu_sound');
 export const APPEARSOUND = document.getElementById('appear_sound');
 export const SNIPERSHOTSOUND = document.getElementById('snipershot_sound');
+export const READYSOUND = document.getElementById('ready_sound');
 
 // RAIN
 export const RAINSOUND = document.getElementById('rain_sound');
