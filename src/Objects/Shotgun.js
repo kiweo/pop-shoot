@@ -7,7 +7,6 @@ const RELOADSPEED = 20; // in ms. charge increases by 1 for every 'reloadspeed' 
 export class Shotgun {
     constructor() {
         this.init();
-        this.setObserver();
     }
 
     init() {
@@ -15,17 +14,8 @@ export class Shotgun {
         this.owned = false;
     }
 
-    setObserver() {
-        let fn = () => {
-            if (!this.isLoaded() && !game.state.paused) {
-                this.charge++;
-            }
-        };
-        setInterval(fn, RELOADSPEED);
-    }
-
     shoot() {
-        this.charge = 0;
+        this.startCharging();
         SceneUtils.shakeScreen(4, 0.5);
         game.audiocontroller.playSound('reload');
 
@@ -35,6 +25,18 @@ export class Shotgun {
                 game.bluelasers.add(new Shell());
             }, i);
         }
+    }
+
+    startCharging() {
+        this.charge = 0;
+        this.charger = setInterval(() => {
+            if (!game.state.paused) {
+                this.charge++;
+            }
+            if (this.charge == 100) {
+                clearInterval(this.charger);
+            }
+        }, RELOADSPEED);
     }
 
     isLoaded() {

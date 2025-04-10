@@ -1,7 +1,7 @@
 import { game } from '../../app.js';
 import { SceneUtils } from '../Scene/SceneUtils.js';
 
-const CHARGING_TIME = 60;
+const CHARGING_TIME = 45;
 
 // grenade behaviour: If the player is hit while grenade is ready
 // all enemies on screen will blow up
@@ -14,7 +14,7 @@ export class Grenade {
     init() {
         clearInterval(this.charger);
         this.owned = false;
-        this.countdown = 0;
+        this.charge = CHARGING_TIME;
     }
 
     blow() {
@@ -25,18 +25,22 @@ export class Grenade {
     }
 
     startCharging() {
-        this.countdown = CHARGING_TIME;
+        this.charge = 0;
         this.charger = setInterval(() => {
             if (!game.state.paused) {
-                this.countdown--;
+                this.charge++;
             }
-            if (this.countdown <= 0) {
+            if (this.charge >= CHARGING_TIME) {
                 clearInterval(this.charger);
             }
         }, 1000);
     }
 
     get isReady() {
-        return this.owned && this.countdown === 0;
+        return this.owned && this.charge === CHARGING_TIME;
+    }
+
+    get chargeRatio() {
+        return this.charge / CHARGING_TIME;
     }
 }

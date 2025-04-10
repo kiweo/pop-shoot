@@ -1,7 +1,7 @@
 import { game } from '../../app.js';
 import { SceneUtils } from '../Scene/SceneUtils.js';
 
-const CHARGING_TIME = 99;
+const CHARGING_TIME = 90;
 const ACTIVE_TIME = 10;
 
 // clock behaviour: If the player is hit while the shield is down,
@@ -16,7 +16,7 @@ export class Clock {
         clearInterval(this.charger);
         this.owned = false;
         this.active = false;
-        this.countdown = 0;
+        this.charge = CHARGING_TIME;
     }
 
     activate() {
@@ -38,18 +38,22 @@ export class Clock {
     }
 
     startCharging() {
-        this.countdown = CHARGING_TIME;
+        this.charge = 0;
         this.charger = setInterval(() => {
             if (!game.state.paused) {
-                this.countdown--;
+                this.charge++;
             }
-            if (this.countdown <= 0) {
+            if (this.charge >= CHARGING_TIME) {
                 clearInterval(this.charger);
             }
         }, 1000);
     }
 
     get isReady() {
-        return this.owned && this.countdown === 0;
+        return this.owned && this.charge === CHARGING_TIME;
+    }
+
+    get chargeRatio() {
+        return this.charge / CHARGING_TIME;
     }
 }

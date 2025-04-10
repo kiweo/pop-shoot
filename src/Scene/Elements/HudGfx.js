@@ -86,10 +86,10 @@ const ICONTEXT_Y = 480;
 const ICONTEXT_FONT = 20;
 const ICONTEXT_SHIFT = 18; // Text above dmg, spray & clock should be shifted to be aligned with the icon
 const ICON_GAP = 45;
-const SHOTGUNBAR_Y = 475;
-const SHOTGUNBAR_X_OFFSET = 3;
-const SHOTGUNBAR_WIDTH = 29;
-const SHOTGUNBAR_HEIGHT = 2;
+const PROGRESSBAR_Y = 475;
+const PROGRESSBAR_X_OFFSET = 3;
+const PROGRESSBAR_WIDTH = 29;
+const PROGRESSBAR_HEIGHT = 2;
 
 export class HudGfx {
     static drawStageTimeCash() {
@@ -163,29 +163,43 @@ export class HudGfx {
             }
             // clock status
             if (item.name === 'clock') {
-                SceneUtils.drawCenteredText(
-                    game.player.clock.active ? '!' : game.player.clock.isReady ? '' : game.player.clock.countdown,
-                    currentx + ICONTEXT_SHIFT,
-                    ICONTEXT_Y,
-                    ICONTEXT_FONT,
+                SceneUtils.drawBigBar(
+                    currentx + PROGRESSBAR_X_OFFSET,
+                    PROGRESSBAR_Y,
+                    PROGRESSBAR_WIDTH,
+                    PROGRESSBAR_HEIGHT,
+                    game.player.clock.chargeRatio,
                 );
+                // SceneUtils.drawCenteredText(
+                //     game.player.clock.active ? '!' : game.player.clock.isReady ? '' : game.player.clock.countdown,
+                //     currentx + ICONTEXT_SHIFT,
+                //     ICONTEXT_Y,
+                //     ICONTEXT_FONT,
+                // );
             }
             // grenade status
             if (item.name === 'grenade') {
-                SceneUtils.drawCenteredText(
-                    game.player.grenade.isReady ? '' : game.player.grenade.countdown,
-                    currentx + ICONTEXT_SHIFT,
-                    ICONTEXT_Y,
-                    ICONTEXT_FONT,
+                SceneUtils.drawBigBar(
+                    currentx + PROGRESSBAR_X_OFFSET,
+                    PROGRESSBAR_Y,
+                    PROGRESSBAR_WIDTH,
+                    PROGRESSBAR_HEIGHT,
+                    game.player.grenade.chargeRatio,
                 );
+                // SceneUtils.drawCenteredText(
+                //     game.player.grenade.isReady ? '' : game.player.grenade.countdown,
+                //     currentx + ICONTEXT_SHIFT,
+                //     ICONTEXT_Y,
+                //     ICONTEXT_FONT,
+                // );
             }
             // shotgun
             if (item.name === 'shotgun') {
                 SceneUtils.drawBigBar(
-                    currentx + SHOTGUNBAR_X_OFFSET,
-                    SHOTGUNBAR_Y,
-                    SHOTGUNBAR_WIDTH,
-                    SHOTGUNBAR_HEIGHT,
+                    currentx + PROGRESSBAR_X_OFFSET,
+                    PROGRESSBAR_Y,
+                    PROGRESSBAR_WIDTH,
+                    PROGRESSBAR_HEIGHT,
                     game.player.shotgun.chargeRatio,
                 );
             }
