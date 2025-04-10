@@ -10,7 +10,6 @@ export const MUSICBOSS2 = document.getElementById('musicboss2');
 export const MUSICBOSS3 = document.getElementById('musicboss3');
 export const MUSICBOSS4 = document.getElementById('musicboss4');
 export const MUSICGAMEOVER = document.getElementById('musicgameover');
-export const MUSICSLOWMO = document.getElementById('musicslowmo');
 export const MUSICCLOCK = document.getElementById('musicclock');
 
 // ANIMATION SOUNDS
@@ -49,6 +48,7 @@ export const ICUSOUND = document.getElementById('icu_sound');
 export const APPEARSOUND = document.getElementById('appear_sound');
 export const SNIPERSHOTSOUND = document.getElementById('snipershot_sound');
 export const READYSOUND = document.getElementById('ready_sound');
+export const SLOWMOSOUND = document.getElementById('slowmo_sound');
 
 // RAIN
 export const RAINSOUND = document.getElementById('rain_sound');

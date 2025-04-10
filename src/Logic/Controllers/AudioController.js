@@ -11,7 +11,6 @@ import {
     MUSICBOSS0,
     MUSICBOSS1,
     MUSICBOSS2,
-    MUSICSLOWMO,
     MUSICGAMEOVER,
     HITSOUND,
     HITQUADSOUND,
@@ -56,6 +55,7 @@ import {
     SNIPERSHOTSOUND,
     BEEPSOUND,
     READYSOUND,
+    SLOWMOSOUND,
 } from '../../Assets/Audio.js';
 
 const MUSIC = {
@@ -69,7 +69,6 @@ const MUSIC = {
     boss2: MUSICBOSS2,
     boss3: MUSICBOSS3,
     boss4: MUSICBOSS4,
-    slowmo: MUSICSLOWMO,
     gameover: MUSICGAMEOVER,
     clock: MUSICCLOCK,
 };
@@ -237,6 +236,11 @@ const SOUNDS = {
         volume: 0.7,
         loop: true,
     },
+    slowmo: {
+        audio: SLOWMOSOUND,
+        rewind: true,
+        volume: 1,
+    },
     slowmoCharge: {
         audio: SLOWMOCHARGESOUND,
         rewind: true,
@@ -307,34 +311,27 @@ export class AudioController {
     // MUSIC
 
     updateMusic() {
-        const track = this._getTrack();
-        for (const key in MUSIC)
-            if (key === track) {
-                if (key === 'slowmo') {
-                    MUSIC[key].currentTime = 0;
-                }
-                MUSIC[key].play();
-            } else {
-                MUSIC[key].pause();
-            }
+        // pause all tracks
+        for (const key in MUSIC) MUSIC[key].pause();
+
+        // play corresponding track according to game state
+        if (game.state.over) {
+            MUSIC['gameover'].play();
+        } else if (game.player.clock.active) {
+            MUSIC['clock'].play();
+        } else if (game.state.boss) {
+            return MUSIC[`boss${game.state.stage}`].play();
+        } else {
+            MUSIC[`stage${game.state.stage}`].play();
+        }
     }
 
-    _getTrack() {
-        // called by updateMusic() to get the corresponding
-        // track to play, depending on the state of the game
-        if (game.state.over) {
-            return 'gameover';
-        }
-        if (game.player.clock.active) {
-            return 'clock';
-        }
-        if (game.state.slowmo) {
-            return 'slowmo';
-        }
-        if (game.state.boss) {
-            return `boss${game.state.stage}`;
-        }
-        return `stage${game.state.stage}`;
+    lowerMusicVolume() {
+        for (const key in MUSIC) MUSIC[key].volume = 0.4;
+    }
+
+    restoreMusicVolume() {
+        for (const key in MUSIC) MUSIC[key].volume = 1;
     }
 
     rewindMusic() {

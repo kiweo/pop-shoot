@@ -50,7 +50,8 @@ export class GameState {
         ) {
             this.slowmo = true;
             game.slowmocontroller.start();
-            game.audiocontroller.updateMusic();
+            game.audiocontroller.playSound('slowmo');
+            game.audiocontroller.lowerMusicVolume();
         } else {
             SceneUtils.shakeScreen(2, 0.25);
             game.effects.add(new Animation(game.player.x, game.player.y + 20, 'smoke_normal'));
@@ -63,7 +64,8 @@ export class GameState {
         if (this.slowmo) {
             this.slowmo = false;
             game.slowmocontroller.stop();
-            game.audiocontroller.updateMusic();
+            game.audiocontroller.stopSound('slowmo');
+            game.audiocontroller.restoreMusicVolume();
         }
     }
 

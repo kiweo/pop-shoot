@@ -420,6 +420,7 @@ const audio = [
     { src: 'soundfx/icu.ogg', id: 'icu_sound', type: 'audio/mpeg' },
     { src: 'soundfx/appear.ogg', id: 'appear_sound', type: 'audio/mpeg' },
     { src: 'soundfx/snipershot.ogg', id: 'snipershot_sound', type: 'audio/mpeg' },
+    { src: 'soundfx/slowmo.ogg', id: 'slowmo_sound', type: 'audio/mpeg' },
     { src: 'music/musics0.ogg', id: 'musicstage0', type: 'audio/mpeg' },
     { src: 'music/musics1.ogg', id: 'musicstage1', type: 'audio/mpeg' },
     { src: 'music/musics2.ogg', id: 'musicstage2', type: 'audio/mpeg' },
@@ -431,7 +432,6 @@ const audio = [
     { src: 'music/musicb3.ogg', id: 'musicboss3', type: 'audio/mpeg' },
     { src: 'music/musicb4.ogg', id: 'musicboss4', type: 'audio/mpeg' },
     { src: 'music/musicgameover.ogg', id: 'musicgameover', type: 'audio/mpeg' },
-    { src: 'music/musicslowmo.ogg', id: 'musicslowmo', type: 'audio/mpeg' },
     { src: 'music/musicclock.ogg', id: 'musicclock', type: 'audio/mpeg' },
 ];
 
