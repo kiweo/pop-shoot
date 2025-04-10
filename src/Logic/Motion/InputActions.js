@@ -1,6 +1,7 @@
 import { game, gameloop } from '../../../app.js';
 import { OrangePackage } from '../../Actors/Packages/OrangePackage.js';
 import { RedPackage } from '../../Actors/Packages/RedPackage.js';
+import { CANVAS } from '../../Assets/Other.js';
 import { SceneUtils } from '../../Scene/SceneUtils.js';
 
 export class InputActions {

@@ -1,3 +1,4 @@
+import { game } from '../../../app.js';
 import { CANVAS } from '../../Assets/Other.js';
 
 export class Movement {
@@ -55,5 +56,12 @@ export class Movement {
             enemy.x += Movement.move(0, enemy.speed).x; // move right
             enemy.y += Movement.move(0, enemy.speed).y; // move right
         }
+    }
+
+    static movePlayerToCanvas() {
+        if (game.player.x > CANVAS.width) game.player.x = CANVAS.width;
+        if (game.player.x < 0) game.player.x = 0;
+        if (game.player.y < 0) game.player.y = 0;
+        if (game.player.y > CANVAS.height) game.player.y = CANVAS.height;
     }
 }

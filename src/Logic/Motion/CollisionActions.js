@@ -75,6 +75,10 @@ export class CollisionActions {
         Movement.moveToCanvas(enemy);
     }
 
+    static PlayerCanvas() {
+        Movement.movePlayerToCanvas();
+    }
+
     // HELPERS
 
     static _determineHitSound(enemy) {

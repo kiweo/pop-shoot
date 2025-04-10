@@ -71,6 +71,7 @@ export class Game {
         CollisionDetection.checkEnemiesEnemies();
         CollisionDetection.checkCoinPlayer();
         CollisionDetection.checkEnemyCanvas();
+        CollisionDetection.checkPlayerCanvas();
     }
 
     refresh() {
