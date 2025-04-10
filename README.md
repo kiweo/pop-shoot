@@ -26,6 +26,7 @@ Useful keybindings are provided in order to jump around the game without having 
 - Kill all enemies on-screen: `X`
 - Spawn RedPackage: `R` OrangePackage: `O`
 - Toggle weather: `V`
+- Show/Hide hitboxes: `H`
 - Respawn: `P`
 
 ### assets

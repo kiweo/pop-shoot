@@ -18,6 +18,7 @@ const REDPACKAGE = 'KeyR';
 const ORANGEPACKAGE = 'KeyO';
 const CLEARENEMIES = 'KeyX';
 const TOGGLEWEATHER = 'KeyV';
+const TOGGLEHITBOXES = 'KeyH';
 const BOSS = 'KeyB';
 const STAGEBUTTONS = ['Digit1', 'Digit2', 'Digit3', 'Digit4', 'Digit5'];
 
@@ -56,6 +57,7 @@ export class InputDetection {
             if (e.code === ORANGEPACKAGE) InputActions.spawnOrangePackage();
             if (e.code === CLEARENEMIES) InputActions.clearEnemies();
             if (e.code === TOGGLEWEATHER) InputActions.toggleWeather();
+            if (e.code === TOGGLEHITBOXES) InputActions.drawHitboxes = !InputActions.drawHitboxes;
             if (e.code === BOSS) InputActions.warpToStage({ stage: game.state.stage, boss: true });
             STAGEBUTTONS.forEach((button, index) => {
                 if (e.code === button) InputActions.warpToStage({ stage: index, boss: false });

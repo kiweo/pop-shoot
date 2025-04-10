@@ -1,5 +1,6 @@
 import { game } from '../../../app.js';
 import { SHIELDEMPSPRITE, SHIELDINVINCIBILITYSPRITE } from '../../Assets/Player.js';
+import { InputActions } from '../../Logic/Motion/InputActions.js';
 import { SceneUtils } from '../SceneUtils.js';
 
 const MIN_SLOWMO_CHARGE = 15; // min charge that slowmo should be at in order for the flame to be drawn
@@ -22,6 +23,9 @@ export class PlayerGfx {
             SceneUtils.offsetCoordinates(game.player).x + game.weathercontroller.glitchOffset.x,
             SceneUtils.offsetCoordinates(game.player).y + game.weathercontroller.glitchOffset.y,
         );
+
+        // debugging - draw hitbox if enabled
+        if (InputActions.drawHitboxes) SceneUtils.drawCircle(game.player.x, game.player.y, game.player.radius);
     }
 
     static drawShield() {

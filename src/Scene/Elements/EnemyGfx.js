@@ -1,6 +1,7 @@
 import { game } from '../../../app.js';
 import { RedPackage } from '../../Actors/Packages/RedPackage.js';
 import { LIGHTBEAMSPRITE } from '../../Assets/Effects.js';
+import { InputActions } from '../../Logic/Motion/InputActions.js';
 import { SceneUtils } from '../SceneUtils.js';
 
 // BOSS BAR
@@ -44,5 +45,8 @@ export class EnemyGfx {
             SceneUtils.offsetCoordinates(enemy).x,
             SceneUtils.offsetCoordinates(enemy).y,
         );
+
+        // debugging - draw hitbox if enabled
+        if (InputActions.drawHitboxes) SceneUtils.drawCircle(enemy.x, enemy.y, enemy.radius);
     }
 }

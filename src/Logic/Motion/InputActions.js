@@ -38,6 +38,8 @@ export class InputActions {
 
     // DEBUGGING
 
+    static drawHitboxes = false;
+
     static toggleWeather() {
         game.weathercontroller.toggleWeather();
     }

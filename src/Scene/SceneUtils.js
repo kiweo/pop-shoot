@@ -38,6 +38,13 @@ export class SceneUtils {
         game.scene.ctx.fillText(text, x, y);
     }
 
+    static drawCircle(x, y, radius) {
+        SceneUtils.setColor(WHITE);
+        game.scene.ctx.beginPath();
+        game.scene.ctx.arc(x, y, radius, 0, 2 * Math.PI);
+        game.scene.ctx.stroke();
+    }
+
     static setColor(color) {
         game.scene.ctx.fillStyle = color;
         game.scene.ctx.strokeStyle = color;
