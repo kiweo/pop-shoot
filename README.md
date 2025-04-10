@@ -17,7 +17,8 @@ randomized item drops & weather effects.
 
 ### debugging
 
-Useful keybindings are provided in order to jump around the game without having to modify the code:
+Useful keybindings are provided in order to jump around the game without having to modify the code.
+Toggle debugging mode on/off using the `0` key.
 
 - Jump to stage keys: `1` `2` `3` `4` `5`
 - Jump to current-stage boss (10 seconds before boss spawn): `B`
@@ -31,8 +32,7 @@ Useful keybindings are provided in order to jump around the game without having 
 
 ### assets
 
-This repository only contains the game's source code.  
-The assets are found [somewhere else](https://github.com/kiweo/pop-shoot-assets).
+This repository only contains the game's source code. The assets are found [somewhere else](https://github.com/kiweo/pop-shoot-assets).
 
 ### license
 

@@ -10,9 +10,11 @@ import {
     GLASSPACKAGESPRITE,
     GLASSSHIELDDOWNSPRITE,
     VLINESPRITE,
+    WRENCHSPRITE,
 } from '../../Assets/Hud.js';
 import { Coin } from '../../Effects/Misc/Coin.js';
 import { getGametimeToMMSS } from '../../Logic/Helpers.js';
+import { InputActions } from '../../Logic/Motion/InputActions.js';
 import { SceneUtils } from '../SceneUtils.js';
 
 // STAGE, TIME & COIN
@@ -40,6 +42,13 @@ const COIN_Y = 50;
 const CASH_X = 31;
 const CASH_Y = 64;
 const CASH_FONT = 25;
+
+// Debugging
+const WRENCH_X = 10;
+const WRENCH_Y = 70;
+const DEBUGGING_X = 31;
+const DEBUGGING_Y = 84;
+const DEBUGGING_FONT = 25;
 
 // SHIELD WARNING
 const SHIELDWARNING_X = 390;
@@ -112,6 +121,12 @@ export class HudGfx {
         // cash
         game.scene.ctx.drawImage(COINSPRITE, COIN_X, COIN_Y);
         SceneUtils.drawText(game.cashcontroller.cash, CASH_X, CASH_Y, CASH_FONT);
+
+        // debugging
+        if (InputActions.debugging) {
+            game.scene.ctx.drawImage(WRENCHSPRITE, WRENCH_X, WRENCH_Y);
+            SceneUtils.drawText('DEBUGGING', DEBUGGING_X, DEBUGGING_Y, DEBUGGING_FONT);
+        }
     }
 
     static drawShieldWarning() {

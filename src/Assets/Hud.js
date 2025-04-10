@@ -9,6 +9,7 @@ export const VLINESPRITE = document.getElementById('vline');
 export const COINSPRITE = document.getElementById('coin');
 export const CLOCKSPRITE = document.getElementById('clock');
 export const FLOPPYSPRITE = document.getElementById('floppy');
+export const WRENCHSPRITE = document.getElementById('wrench');
 
 // HUD STAGES
 export const GLASSSTAGE1SPRITE = document.getElementById('glassstage1');

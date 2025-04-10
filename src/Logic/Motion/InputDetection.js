@@ -11,6 +11,7 @@ const SLOWMO = 'ShiftLeft';
 const PAUSE = 'Space';
 
 // DEBUGGING
+const TOGGLEDEBUGGING = 'Digit0';
 const RESPAWN = 'KeyP';
 const DROPITEM = 'Enter';
 const CLEARITEMS = 'KeyC';
@@ -50,18 +51,21 @@ export class InputDetection {
             if (e.code === PAUSE) InputActions.pauseDown();
 
             // debugging
-            if (e.code === RESPAWN) InputActions.respawn();
-            if (e.code === DROPITEM) InputActions.dropItem();
-            if (e.code === CLEARITEMS) InputActions.clearItems();
-            if (e.code === REDPACKAGE) InputActions.spawnRedPackage();
-            if (e.code === ORANGEPACKAGE) InputActions.spawnOrangePackage();
-            if (e.code === CLEARENEMIES) InputActions.clearEnemies();
-            if (e.code === TOGGLEWEATHER) InputActions.toggleWeather();
-            if (e.code === TOGGLEHITBOXES) InputActions.drawHitboxes = !InputActions.drawHitboxes;
-            if (e.code === BOSS) InputActions.warpToStage({ stage: game.state.stage, boss: true });
-            STAGEBUTTONS.forEach((button, index) => {
-                if (e.code === button) InputActions.warpToStage({ stage: index, boss: false });
-            });
+            if (e.code === TOGGLEDEBUGGING) InputActions.debugging = !InputActions.debugging;
+            if (InputActions.debugging) {
+                if (e.code === RESPAWN) InputActions.respawn();
+                if (e.code === DROPITEM) InputActions.dropItem();
+                if (e.code === CLEARITEMS) InputActions.clearItems();
+                if (e.code === REDPACKAGE) InputActions.spawnRedPackage();
+                if (e.code === ORANGEPACKAGE) InputActions.spawnOrangePackage();
+                if (e.code === CLEARENEMIES) InputActions.clearEnemies();
+                if (e.code === TOGGLEWEATHER) InputActions.toggleWeather();
+                if (e.code === TOGGLEHITBOXES) InputActions.drawHitboxes = !InputActions.drawHitboxes;
+                if (e.code === BOSS) InputActions.warpToStage({ stage: game.state.stage, boss: true });
+                STAGEBUTTONS.forEach((button, index) => {
+                    if (e.code === button) InputActions.warpToStage({ stage: index, boss: false });
+                });
+            }
         });
     }
 

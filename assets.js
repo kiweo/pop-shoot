@@ -162,6 +162,7 @@ const images = [
     { src: 'sprites/hud/glass/coin.png', id: 'coin' },
     { src: 'sprites/hud/glass/clock.png', id: 'clock' },
     { src: 'sprites/hud/glass/floppy.png', id: 'floppy' },
+    { src: 'sprites/hud/glass/wrench.png', id: 'wrench' },
     { src: 'sprites/hud/items/bombs_notification.png', id: 'bombs_notification' },
     { src: 'sprites/hud/items/toxic_notification.png', id: 'toxic_notification' },
     { src: 'sprites/hud/items/machinegun_notification.png', id: 'machinegun_notification' },

@@ -38,6 +38,7 @@ export class InputActions {
 
     // DEBUGGING
 
+    static debugging = false;
     static drawHitboxes = false;
 
     static toggleWeather() {
