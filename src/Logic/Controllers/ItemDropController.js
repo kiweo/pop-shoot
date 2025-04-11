@@ -7,8 +7,8 @@ import { ITEMS } from '../../Objects/Items.js';
 
 // NOTIFICATIONS COORDINATES & DURATION ON ITEM DROP
 const NOTIFICATION_DURATION = 400; // in ticks. higher = longer
-const NOTIFICATION_X = 190;
-const NOTIFICATION_Y = 440;
+const NOTIFICATION_X = 150;
+const NOTIFICATION_Y = 445;
 
 // DROP RATE FOR NON-REPETITIVE POOL
 const RATE = 80;
