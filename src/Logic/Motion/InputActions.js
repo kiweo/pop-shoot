@@ -75,6 +75,7 @@ export class InputActions {
         game.slowmocontroller.init();
         game.player.clock.init();
         game.player.shotgun.init();
+        game.player.grenade.init();
     }
 
     static warpToStage({ stage, boss }) {

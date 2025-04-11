@@ -33,14 +33,14 @@ export class Shotgun {
             if (!game.state.paused) {
                 this.charge++;
             }
-            if (this.charge == 100) {
+            if (this.charge >= 100) {
                 clearInterval(this.charger);
             }
         }, RELOADSPEED);
     }
 
     get isLoaded() {
-        return this.charge === 100;
+        return this.charge >= 100;
     }
 
     get chargeRatio() {
