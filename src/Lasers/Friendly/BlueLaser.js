@@ -3,7 +3,7 @@ import { game } from '../../../app.js';
 import { CANVAS } from '../../Assets/Other.js';
 import { Animation } from '../../Effects/Misc/Animation.js';
 import { randomInRange } from '../../Logic/Helpers.js';
-import { BOMBSPRITE, LASERSPRITE, QUADSPRITE, THORSPRITE } from '../../Assets/Lasers.js';
+import { LASERSPRITE, QUADSPRITE, THORSPRITE } from '../../Assets/Lasers.js';
 
 const SPEED = 10;
 const RADIUS = 5;
@@ -43,9 +43,6 @@ export class BlueLaser {
         }
         if (game.buffcontroller.thorshammer) {
             return (this.sprite = THORSPRITE);
-        }
-        if (game.buffcontroller.bomb) {
-            return (this.sprite = BOMBSPRITE);
         }
     }
 

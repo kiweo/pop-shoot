@@ -2,7 +2,6 @@
 export const LASERSPRITE = document.getElementById('laser');
 export const SEEKERSPRITE = document.getElementById('seeker');
 export const ROCKETSPRITE = document.getElementById('rocket');
-export const BOMBSPRITE = document.getElementById('bomb');
 export const DARTS0SPRITE = document.getElementById('darts0');
 export const DARTS1SPRITE = document.getElementById('darts1');
 export const DARTS2SPRITE = document.getElementById('darts2');

@@ -152,7 +152,6 @@ const images = [
     { src: 'sprites/lasers/darts1.png', id: 'darts1' },
     { src: 'sprites/lasers/darts2.png', id: 'darts2' },
     { src: 'sprites/lasers/darts3.png', id: 'darts3' },
-    { src: 'sprites/lasers/bomb.png', id: 'bomb' },
     { src: 'sprites/lasers/quad.png', id: 'quad' },
     { src: 'sprites/lasers/thor.png', id: 'thor' },
     { src: 'sprites/lasers/firelaser.png', id: 'firelaser' },
