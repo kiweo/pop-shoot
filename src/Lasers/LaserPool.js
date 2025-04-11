@@ -8,6 +8,7 @@ export class LaserPool {
 
     add(laser) {
         this.liveLasers.push(laser);
+
         if (game.state.slowmo) {
             game.slowmocontroller.applyToOneLaser(laser);
         }
@@ -23,22 +24,13 @@ export class LaserPool {
         }
     }
 
-    // only keep lasers that meet the below conditions:
-    // - not shattered
-    // - still on-screen
+    // remove lasers that are shattered or out of screen
     refresh() {
         this.liveLasers = this.liveLasers.filter((laser) => {
-            const isShattered = laser.shattered;
             const isInScreen = laser.y >= 0 && laser.y <= CANVAS.height && laser.x >= 0 && laser.x <= CANVAS.width;
-
-            if (isShattered) {
+            if (laser.shattered || !isInScreen) {
                 return false;
             }
-
-            if (!isInScreen) {
-                return false;
-            }
-
             return true;
         });
     }
