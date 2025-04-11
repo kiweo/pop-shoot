@@ -158,7 +158,7 @@ const SOUNDFX = {
     reload: {
         audio: AUDIO.RELOADSOUND,
         clone: true,
-        volume: 1,
+        volume: 0.6,
     },
     sand: {
         audio: AUDIO.SANDSOUND,
