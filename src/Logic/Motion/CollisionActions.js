@@ -42,7 +42,7 @@ export class CollisionActions {
             SceneUtils.flashScreen();
             enemy.takeDamage(enemy.hp);
             game.player.shield.deplete();
-            if (game.player.grenade.isReady && !game.state.boss) {
+            if (game.player.grenade.isReady && !game.state.boss && !game.buffcontroller.invincibility) {
                 game.player.grenade.blow();
             }
             if (game.itemactioncontroller.emp) {
@@ -60,7 +60,7 @@ export class CollisionActions {
             SceneUtils.flashScreen();
             firelaser.shatter();
             game.player.shield.deplete();
-            if (game.player.grenade.isReady && !game.state.boss) {
+            if (game.player.grenade.isReady && !game.state.boss && !game.buffcontroller.invincibility) {
                 game.player.grenade.blow();
             }
             if (game.itemactioncontroller.emp) {

@@ -3,7 +3,6 @@ export const PLAYERSPRITE = document.getElementById('player');
 
 // SHIELD
 export const SHIELDSPRITE = document.getElementById('shield');
-export const SHIELDMETALSPRITE = document.getElementById('shieldmetal');
 export const SHIELDUNDERFIRESPRITE = document.getElementById('shieldunderfire');
 export const SHIELDEMPSPRITE = document.getElementById('shieldemp');
 export const SHIELDINVINCIBILITYSPRITE = document.getElementById('shieldinvincibility');

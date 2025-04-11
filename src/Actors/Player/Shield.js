@@ -1,5 +1,11 @@
 import { game } from '../../../app.js';
-import { SHIELDMETALSPRITE, SHIELDSPRITE, SHIELDUNDERFIRESPRITE } from '../../Assets/Player.js';
+import {
+    SHIELDEMPSPRITE,
+    SHIELDGRENADESPRITE,
+    SHIELDINVINCIBILITYSPRITE,
+    SHIELDSPRITE,
+    SHIELDUNDERFIRESPRITE,
+} from '../../Assets/Player.js';
 
 const UNDERFIRETIME = 1; // default invincibility time if no metalshield upgrade, in seconds
 const CHARGERATE = 1; // default charging rate if no nitrogen upgrade
@@ -64,8 +70,14 @@ export class Shield {
         if (this.underfire) {
             return (this.sprite = SHIELDUNDERFIRESPRITE);
         }
-        if (game.itemactioncontroller.metalshield) {
-            return (this.sprite = SHIELDMETALSPRITE);
+        if (game.buffcontroller.invincibility) {
+            return (this.sprite = SHIELDINVINCIBILITYSPRITE);
+        }
+        if (this.isCharged() && game.player.grenade.isReady) {
+            return (this.sprite = SHIELDGRENADESPRITE);
+        }
+        if (game.itemactioncontroller.emp) {
+            return (this.sprite = SHIELDEMPSPRITE);
         }
         this.sprite = SHIELDSPRITE;
     }

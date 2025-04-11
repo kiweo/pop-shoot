@@ -69,7 +69,6 @@ const images = [
     { src: 'sprites/effects/weather/matrix/matrix12.png', id: 'matrix12' },
     { src: 'sprites/player/player.png', id: 'player' },
     { src: 'sprites/player/shield.png', id: 'shield' },
-    { src: 'sprites/player/shieldmetal.png', id: 'shieldmetal' },
     { src: 'sprites/player/shieldemp.png', id: 'shieldemp' },
     { src: 'sprites/player/shieldunderfire.png', id: 'shieldunderfire' },
     { src: 'sprites/player/shieldinvincibility.png', id: 'shieldinvincibility' },
