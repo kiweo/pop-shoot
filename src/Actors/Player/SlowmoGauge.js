@@ -28,7 +28,7 @@ export class SlowmoGauge {
             }
             // if slowmo not active, charge the gauge as long as it
             // has not yet reached full charge
-            if (!game.state.slowmo && !game.state.paused && !this.isCharged()) {
+            if (!game.state.slowmo && !game.state.paused && !this.isCharged) {
                 this.startCharging();
             }
         };
@@ -58,7 +58,7 @@ export class SlowmoGauge {
         }
     }
 
-    isCharged() {
+    get isCharged() {
         return this.charge === 100;
     }
 }

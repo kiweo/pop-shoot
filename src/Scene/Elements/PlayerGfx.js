@@ -27,7 +27,7 @@ export class PlayerGfx {
     }
 
     static drawShield() {
-        if (game.player.shield.isCharged()) {
+        if (game.player.shield.isCharged) {
             game.scene.ctx.drawImage(
                 game.player.shield.sprite,
                 SceneUtils.offsetCoordinates(game.player).x + game.weathercontroller.glitchOffset.x,

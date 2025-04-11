@@ -38,7 +38,7 @@ export class CollisionActions {
     }
 
     static PlayerEnemies(enemy) {
-        if (game.player.shield.isCharged() && !enemy.name) {
+        if (game.player.shield.isCharged && !enemy.name) {
             SceneUtils.flashScreen();
             enemy.takeDamage(enemy.hp);
             game.player.shield.deplete();
@@ -56,7 +56,7 @@ export class CollisionActions {
     }
 
     static PlayerFirelasers(firelaser) {
-        if (game.player.shield.isCharged()) {
+        if (game.player.shield.isCharged) {
             SceneUtils.flashScreen();
             firelaser.shatter();
             game.player.shield.deplete();

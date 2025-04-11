@@ -39,7 +39,7 @@ export class Shotgun {
         }, RELOADSPEED);
     }
 
-    isLoaded() {
+    get isLoaded() {
         return this.charge === 100;
     }
 

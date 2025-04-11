@@ -130,7 +130,7 @@ export class HudGfx {
     }
 
     static drawShieldWarning() {
-        if (!game.player.shield.isCharged()) {
+        if (!game.player.shield.isCharged) {
             game.scene.ctx.drawImage(GLASSSHIELDDOWNSPRITE, SHIELDWARNING_X, SHIELDWARNING_Y);
             SceneUtils.drawText(
                 `RECHARGING ${game.player.shield.currentCharge}%`,
@@ -178,7 +178,7 @@ export class HudGfx {
                 );
             }
             // clock status
-            if (item.name === 'clock') {
+            if (item.name === 'clock' && !game.player.clock.isReady) {
                 SceneUtils.drawBigBar(
                     currentx + PROGRESSBAR_X_OFFSET,
                     PROGRESSBAR_Y,
@@ -186,15 +186,9 @@ export class HudGfx {
                     PROGRESSBAR_HEIGHT,
                     game.player.clock.chargeRatio,
                 );
-                SceneUtils.drawCenteredText(
-                    game.player.clock.isReady ? '!' : '',
-                    currentx + ICONTEXT_SHIFT,
-                    ICONTEXT_Y - PROGRESSBAR_READY_Y_OFFSET,
-                    ICONTEXT_FONT,
-                );
             }
             // grenade status
-            if (item.name === 'grenade') {
+            if (item.name === 'grenade' && !game.player.grenade.isReady) {
                 SceneUtils.drawBigBar(
                     currentx + PROGRESSBAR_X_OFFSET,
                     PROGRESSBAR_Y,
@@ -202,27 +196,15 @@ export class HudGfx {
                     PROGRESSBAR_HEIGHT,
                     game.player.grenade.chargeRatio,
                 );
-                SceneUtils.drawCenteredText(
-                    game.player.grenade.isReady ? '!' : '',
-                    currentx + ICONTEXT_SHIFT,
-                    ICONTEXT_Y - PROGRESSBAR_READY_Y_OFFSET,
-                    ICONTEXT_FONT,
-                );
             }
             // shotgun
-            if (item.name === 'shotgun') {
+            if (item.name === 'shotgun' && !game.player.shotgun.isLoaded) {
                 SceneUtils.drawBigBar(
                     currentx + PROGRESSBAR_X_OFFSET,
                     PROGRESSBAR_Y,
                     PROGRESSBAR_WIDTH,
                     PROGRESSBAR_HEIGHT,
                     game.player.shotgun.chargeRatio,
-                );
-                SceneUtils.drawCenteredText(
-                    game.player.shotgun.isLoaded() ? '!' : '',
-                    currentx + ICONTEXT_SHIFT,
-                    ICONTEXT_Y - PROGRESSBAR_READY_Y_OFFSET,
-                    ICONTEXT_FONT,
                 );
             }
             currentx += ICON_GAP;

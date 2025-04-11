@@ -19,9 +19,9 @@ export class Shield {
     setObserver() {
         let fn = () => {
             this.setSprite();
-            if (!game.state.paused && !this.isCharged()) {
+            if (!game.state.paused && !this.isCharged) {
                 this.startCharging();
-                if (this.isCharged()) {
+                if (this.isCharged) {
                     game.audiocontroller.playSound('shieldUp');
                 }
             }
@@ -67,7 +67,7 @@ export class Shield {
         if (game.buffcontroller.invincibility) {
             return (this.sprite = SHIELD.SHIELDINVINCIBILITYSPRITE);
         }
-        if (this.isCharged() && game.player.grenade.isReady) {
+        if (this.isCharged && game.player.grenade.isReady) {
             return (this.sprite = SHIELD.SHIELDGRENADESPRITE);
         }
         if (game.itemactioncontroller.emp) {
@@ -76,7 +76,7 @@ export class Shield {
         this.sprite = SHIELD.SHIELDSPRITE;
     }
 
-    isCharged() {
+    get isCharged() {
         return this.charge === 100;
     }
 
