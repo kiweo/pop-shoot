@@ -1,33 +1,7 @@
 import { game } from '../../../app.js';
 import { BLACKSCREENSPRITE, HIEROGLYPHSPRITE } from '../../Assets/Effects.js';
-import {
-    CANVAS,
-    FOG,
-    S0BACK,
-    S0FRONT,
-    S0MID,
-    S1BACK,
-    S1FRONT,
-    S1MID,
-    S2BACK,
-    S2FRONT,
-    S2MID,
-    S3BACK,
-    S3FRONT,
-    S3MID,
-    S4BACK,
-    S4FRONT,
-    S4MID,
-} from '../../Assets/Other.js';
+import { BACKGROUNDS, CANVAS, FOG } from '../../Assets/Other.js';
 import { Sand } from '../../Effects/Weather/Sand.js';
-
-const BACKGROUNDS = {
-    stage0: { back: S0BACK, mid: S0MID, front: S0FRONT },
-    stage1: { back: S1BACK, mid: S1MID, front: S1FRONT },
-    stage2: { back: S2BACK, mid: S2MID, front: S2FRONT },
-    stage3: { back: S3BACK, mid: S3MID, front: S3FRONT },
-    stage4: { back: S4BACK, mid: S4MID, front: S4FRONT },
-};
 
 const PARALLAX_SPEED = 3;
 

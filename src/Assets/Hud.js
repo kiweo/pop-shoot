@@ -12,11 +12,13 @@ export const FLOPPYSPRITE = document.getElementById('floppy');
 export const WRENCHSPRITE = document.getElementById('wrench');
 
 // HUD STAGES
-export const GLASSSTAGE1SPRITE = document.getElementById('glassstage1');
-export const GLASSSTAGE2SPRITE = document.getElementById('glassstage2');
-export const GLASSSTAGE3SPRITE = document.getElementById('glassstage3');
-export const GLASSSTAGE4SPRITE = document.getElementById('glassstage4');
-export const GLASSSTAGE5SPRITE = document.getElementById('glassstage5');
+export const GLASSSTAGES = [
+    document.getElementById('glassstage1'),
+    document.getElementById('glassstage2'),
+    document.getElementById('glassstage3'),
+    document.getElementById('glassstage4'),
+    document.getElementById('glassstage5'),
+];
 
 export const ITEMSHUD = {
     // NOTIFICATIONS

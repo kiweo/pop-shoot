@@ -1,16 +1,9 @@
 import { game, gameloop } from '../../../app.js';
-import {
-    GLASSSTAGE1SPRITE,
-    GLASSSTAGE2SPRITE,
-    GLASSSTAGE3SPRITE,
-    GLASSSTAGE4SPRITE,
-    GLASSSTAGE5SPRITE,
-} from '../../Assets/Hud.js';
 import { Notification } from '../../Effects/Misc/Notification.js';
 import { Animation } from '../../Effects/Misc/Animation.js';
 import { SceneUtils } from '../../Scene/SceneUtils.js';
+import { GLASSSTAGES } from '../../Assets/Hud.js';
 
-const STAGESPRITES = [GLASSSTAGE1SPRITE, GLASSSTAGE2SPRITE, GLASSSTAGE3SPRITE, GLASSSTAGE4SPRITE, GLASSSTAGE5SPRITE];
 const NOTIFICATION_DURATION = 400; // in ticks. higher = longer
 const NOTIFICATION_X = 500;
 const NOTIFICATION_Y = 80;
@@ -148,7 +141,7 @@ export class GameState {
     addStageNotification() {
         game.effects.clearNotifications('stage');
         game.effects.add(
-            new Notification(NOTIFICATION_X, NOTIFICATION_Y, STAGESPRITES[this.stage], NOTIFICATION_DURATION, 'stage'),
+            new Notification(NOTIFICATION_X, NOTIFICATION_Y, GLASSSTAGES[this.stage], NOTIFICATION_DURATION, 'stage'),
         );
     }
 }
