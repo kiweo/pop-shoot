@@ -125,6 +125,7 @@ export class GameState {
         game.player.flame.move({ smoketype: 'smoke_small' });
         game.player.clock.init();
         game.player.shotgun.init();
+        game.player.grenade.init();
 
         // controllers
         game.buffcontroller.init();

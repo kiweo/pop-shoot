@@ -2,22 +2,26 @@
 export const PLAYERSPRITE = document.getElementById('player');
 
 // SHIELD
-export const SHIELDSPRITE = document.getElementById('shield');
-export const SHIELDUNDERFIRESPRITE = document.getElementById('shieldunderfire');
-export const SHIELDEMPSPRITE = document.getElementById('shieldemp');
-export const SHIELDINVINCIBILITYSPRITE = document.getElementById('shieldinvincibility');
-export const SHIELDGRENADESPRITE = document.getElementById('shieldgrenade');
+export const SHIELD = {
+    SHIELDSPRITE: document.getElementById('shield'),
+    SHIELDUNDERFIRESPRITE: document.getElementById('shieldunderfire'),
+    SHIELDEMPSPRITE: document.getElementById('shieldemp'),
+    SHIELDINVINCIBILITYSPRITE: document.getElementById('shieldinvincibility'),
+    SHIELDGRENADESPRITE: document.getElementById('shieldgrenade'),
+};
 
 // JET FLAME
-export const FLAME0SPRITE = document.getElementById('flame0');
-export const FLAME1SPRITE = document.getElementById('flame1');
-export const FLAME2SPRITE = document.getElementById('flame2');
-export const FLAME3SPRITE = document.getElementById('flame3');
-export const FLAME4SPRITE = document.getElementById('flame4');
-export const FLAME5SPRITE = document.getElementById('flame5');
-export const FLAME6SPRITE = document.getElementById('flame6');
-export const FLAME7SPRITE = document.getElementById('flame7');
-export const FLAME8SPRITE = document.getElementById('flame8');
-export const FLAME9SPRITE = document.getElementById('flame9');
-export const FLAME10SPRITE = document.getElementById('flame10');
-export const FLAME11SPRITE = document.getElementById('flame11');
+export const FLAME = [
+    document.getElementById('flame0'),
+    document.getElementById('flame1'),
+    document.getElementById('flame2'),
+    document.getElementById('flame3'),
+    document.getElementById('flame4'),
+    document.getElementById('flame5'),
+    document.getElementById('flame6'),
+    document.getElementById('flame7'),
+    document.getElementById('flame8'),
+    document.getElementById('flame9'),
+    document.getElementById('flame10'),
+    document.getElementById('flame11'),
+];
