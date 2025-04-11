@@ -50,11 +50,13 @@ export class InputActions {
     }
 
     static respawn() {
-        game.state.over = false;
-        game.firelasers.clear();
-        game.player.shield.charge = 100;
-        window.requestAnimationFrame(gameloop);
-        game.audiocontroller.updateMusic();
+        if (game.state.over) {
+            game.state.over = false;
+            game.firelasers.clear();
+            game.player.shield.charge = 100;
+            window.requestAnimationFrame(gameloop);
+            game.audiocontroller.updateMusic();
+        }
     }
 
     static spawnRedPackage() {
