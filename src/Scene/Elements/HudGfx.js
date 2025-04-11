@@ -89,7 +89,7 @@ const BUFFTIME_Y = 460;
 const BUFFTIME_FONT = 30;
 
 // ICONS
-const ICON_STARTINGX = 170;
+const ICON_STARTINGX = 147;
 const ICON_Y = 482;
 const ICONTEXT_Y = 480;
 const ICONTEXT_FONT = 20;
@@ -99,7 +99,6 @@ const PROGRESSBAR_Y = 475;
 const PROGRESSBAR_X_OFFSET = 3;
 const PROGRESSBAR_WIDTH = 29;
 const PROGRESSBAR_HEIGHT = 2;
-const PROGRESSBAR_READY_Y_OFFSET = 12;
 
 export class HudGfx {
     static drawStageTimeCash() {
