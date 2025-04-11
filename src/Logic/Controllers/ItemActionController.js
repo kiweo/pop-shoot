@@ -29,7 +29,6 @@ const TOXICRATE = 0.4; // damage multiplier dealt to enemies by toxic slowmo (1 
 // DEFENSIVE ITEMS MODIFIERS
 const GREEDCHANCE = 20; // % of receiving double coins
 const METALSHIELDTIME = 2; // invincibility time after being hit, in seconds (time without upgrade is 1)
-const NITROGENRATE = 2; // rate at which shield recharges with nitrogen (higher = faster. default without upgrade is 1)
 const URANIUMRATE = 0.6; // rate at which slowmo depletes (lower = slower. default without upgrade is 0.75)
 
 export class ItemActionController {
@@ -53,7 +52,6 @@ export class ItemActionController {
         this.grenade = false;
         this.loopers = false;
         this.machinegun = false;
-        this.nitrogen = false;
         this.metalshield = false;
         this.rocket = false;
         this.slicer = false;
@@ -70,7 +68,6 @@ export class ItemActionController {
         this.greedchance = GREEDCHANCE;
         this.machinegunrate = MACHINEGUNRATE;
         this.metalshieldtime = METALSHIELDTIME;
-        this.nitrogenrate = NITROGENRATE;
         this.rocketdamage = ROCKETDAMAGE;
         this.rocketchance = ROCKETCHANCE;
         this.slicerchance = SLICERCHANCE;

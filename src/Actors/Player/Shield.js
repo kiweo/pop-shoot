@@ -2,7 +2,7 @@ import { game } from '../../../app.js';
 import { SHIELD } from '../../Assets/Player.js';
 
 const UNDERFIRETIME = 1; // default invincibility time if no metalshield upgrade, in seconds
-const CHARGERATE = 1; // default charging rate if no nitrogen upgrade
+const CHARGERATE = 2; // default charging rate
 
 export class Shield {
     constructor() {
@@ -30,7 +30,7 @@ export class Shield {
     }
 
     startCharging() {
-        let rate = game.itemactioncontroller.nitrogen ? game.itemactioncontroller.nitrogenrate : CHARGERATE;
+        let rate = CHARGERATE;
 
         if (game.state.slowmo) {
             rate *= game.slowmocontroller.slowmorate;

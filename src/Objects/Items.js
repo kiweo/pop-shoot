@@ -68,12 +68,6 @@ export const ITEMS = {
         icon: ITEMSHUD.DAMAGE_ICON,
         notification: ITEMSHUD.DAMAGE_NOTIFICATION,
     },
-    nitrogen: {
-        name: 'nitrogen',
-        activate: () => (game.itemactioncontroller.nitrogen = true),
-        icon: ITEMSHUD.NITROGEN_ICON,
-        notification: ITEMSHUD.NITROGEN_NOTIFICATION,
-    },
     rocket: {
         name: 'rocket',
         activate: () => (game.itemactioncontroller.rocket = true),
