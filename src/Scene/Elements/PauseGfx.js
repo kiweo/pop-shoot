@@ -29,7 +29,7 @@ export class PauseGfx {
                 currenty += VERTICALGAP;
             }
             // draw icon, then shift X right according to horizontalGap
-            game.scene.ctx.drawImage(item.pause, currentx, currenty);
+            game.scene.ctx.drawImage(item.notification, currentx, currenty);
             currentx += HORIZONTALGAP;
         });
     }

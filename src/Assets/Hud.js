@@ -41,28 +41,6 @@ export const ITEMSHUD = {
     SLICER_NOTIFICATION: document.getElementById('slicer_notification'),
     GRENADE_NOTIFICATION: document.getElementById('grenade_notification'),
 
-    // PAUSE DESCRIPTIONS
-    BOMBS_PAUSE: document.getElementById('bombs_pause'),
-    TOXIC_PAUSE: document.getElementById('toxic_pause'),
-    MACHINEGUN_PAUSE: document.getElementById('machinegun_pause'),
-    GREED_PAUSE: document.getElementById('greed_pause'),
-    TIMEFREEZE_PAUSE: document.getElementById('timefreeze_pause'),
-    DARTS_PAUSE: document.getElementById('darts_pause'),
-    LOOPERS_PAUSE: document.getElementById('loopers_pause'),
-    METALSHIELD_PAUSE: document.getElementById('metalshield_pause'),
-    NITROGEN_PAUSE: document.getElementById('nitrogen_pause'),
-    URANIUM_PAUSE: document.getElementById('uraniumfuel_pause'),
-    DAMAGE_PAUSE: document.getElementById('damage_pause'),
-    SPRAY_PAUSE: document.getElementById('spray_pause'),
-    ROCKET_PAUSE: document.getElementById('rocket_pause'),
-    EMP_PAUSE: document.getElementById('emp_pause'),
-    SEEKERS_PAUSE: document.getElementById('seekers_pause'),
-    CLOCK_PAUSE: document.getElementById('clock_pause'),
-    AIRSTRIKE_PAUSE: document.getElementById('airstrike_pause'),
-    SHOTGUN_PAUSE: document.getElementById('shotgun_pause'),
-    SLICER_PAUSE: document.getElementById('slicer_pause'),
-    GRENADE_PAUSE: document.getElementById('grenade_pause'),
-
     // ICONS
     BOMBS_ICON: document.getElementById('bombs_icon'),
     TOXIC_ICON: document.getElementById('toxic_icon'),

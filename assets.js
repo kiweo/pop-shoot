@@ -1,6 +1,7 @@
 const ASSETS_PATH = '../pop-shoot-assets/';
 
 const images = [
+    // backgrounds
     { src: 'sprites/backgrounds/stage0back.png', id: 'stage0back' },
     { src: 'sprites/backgrounds/stage0mid.png', id: 'stage0mid' },
     { src: 'sprites/backgrounds/stage0front.png', id: 'stage0front' },
@@ -16,7 +17,11 @@ const images = [
     { src: 'sprites/backgrounds/stage4back.png', id: 'stage4back' },
     { src: 'sprites/backgrounds/stage4mid.png', id: 'stage4mid' },
     { src: 'sprites/backgrounds/stage4front.png', id: 'stage4front' },
+
+    // menu
     { src: 'sprites/menu.png', id: 'menu' },
+
+    // weather
     { src: 'sprites/effects/weather/rain/rain0.png', id: 'rain0' },
     { src: 'sprites/effects/weather/rain/rain1.png', id: 'rain1' },
     { src: 'sprites/effects/weather/rain/rain2.png', id: 'rain2' },
@@ -67,6 +72,8 @@ const images = [
     { src: 'sprites/effects/weather/matrix/matrix10.png', id: 'matrix10' },
     { src: 'sprites/effects/weather/matrix/matrix11.png', id: 'matrix11' },
     { src: 'sprites/effects/weather/matrix/matrix12.png', id: 'matrix12' },
+
+    // player
     { src: 'sprites/player/player.png', id: 'player' },
     { src: 'sprites/player/shield.png', id: 'shield' },
     { src: 'sprites/player/shieldemp.png', id: 'shieldemp' },
@@ -85,6 +92,8 @@ const images = [
     { src: 'sprites/player/flame9.png', id: 'flame9' },
     { src: 'sprites/player/flame10.png', id: 'flame10' },
     { src: 'sprites/player/flame11.png', id: 'flame11' },
+
+    // enemies
     { src: 'sprites/enemies/greeninvader.png', id: 'greeninvader' },
     { src: 'sprites/enemies/greenplacer.png', id: 'greenplacer' },
     { src: 'sprites/enemies/greenterror.png', id: 'greenterror' },
@@ -116,6 +125,8 @@ const images = [
     { src: 'sprites/enemies/boss_fk77_hardened.png', id: 'boss_fk77_hardened' },
     { src: 'sprites/enemies/redpackage.png', id: 'redpackage' },
     { src: 'sprites/enemies/orangepackage.png', id: 'orangepackage' },
+
+    // effects
     { src: 'sprites/effects/misc/fog.png', id: 'fog' },
     { src: 'sprites/effects/slashes/slash0.png', id: 'slash0' },
     { src: 'sprites/effects/slashes/slash1.png', id: 'slash1' },
@@ -132,6 +143,8 @@ const images = [
     { src: 'sprites/effects/misc/whitescreen.png', id: 'whitescreen' },
     { src: 'sprites/effects/misc/blackscreen.png', id: 'blackscreen' },
     { src: 'sprites/effects/misc/lightbeam.png', id: 'lightbeam' },
+
+    // lasers
     { src: 'sprites/lasers/laser.png', id: 'laser' },
     { src: 'sprites/lasers/seeker.png', id: 'seeker' },
     { src: 'sprites/lasers/rocket.png', id: 'rocket' },
@@ -147,6 +160,8 @@ const images = [
     { src: 'sprites/lasers/shell0.png', id: 'shell0' },
     { src: 'sprites/lasers/shell1.png', id: 'shell1' },
     { src: 'sprites/lasers/shell2.png', id: 'shell2' },
+
+    // hud
     { src: 'sprites/hud/glass/glassbar.png', id: 'glassbar' },
     { src: 'sprites/hud/glass/glasspause.png', id: 'glasspause' },
     { src: 'sprites/hud/glass/glassgameover.png', id: 'glassgameover' },
@@ -183,26 +198,6 @@ const images = [
     { src: 'sprites/hud/items/shotgun_notification.png', id: 'shotgun_notification' },
     { src: 'sprites/hud/items/slicer_notification.png', id: 'slicer_notification' },
     { src: 'sprites/hud/items/grenade_notification.png', id: 'grenade_notification' },
-    { src: 'sprites/hud/items/bombs_pause.png', id: 'bombs_pause' },
-    { src: 'sprites/hud/items/toxic_pause.png', id: 'toxic_pause' },
-    { src: 'sprites/hud/items/machinegun_pause.png', id: 'machinegun_pause' },
-    { src: 'sprites/hud/items/greed_pause.png', id: 'greed_pause' },
-    { src: 'sprites/hud/items/timefreeze_pause.png', id: 'timefreeze_pause' },
-    { src: 'sprites/hud/items/darts_pause.png', id: 'darts_pause' },
-    { src: 'sprites/hud/items/loopers_pause.png', id: 'loopers_pause' },
-    { src: 'sprites/hud/items/metalshield_pause.png', id: 'metalshield_pause' },
-    { src: 'sprites/hud/items/nitrogen_pause.png', id: 'nitrogen_pause' },
-    { src: 'sprites/hud/items/uraniumfuel_pause.png', id: 'uraniumfuel_pause' },
-    { src: 'sprites/hud/items/damage_pause.png', id: 'damage_pause' },
-    { src: 'sprites/hud/items/spray_pause.png', id: 'spray_pause' },
-    { src: 'sprites/hud/items/rocket_pause.png', id: 'rocket_pause' },
-    { src: 'sprites/hud/items/emp_pause.png', id: 'emp_pause' },
-    { src: 'sprites/hud/items/seekers_pause.png', id: 'seekers_pause' },
-    { src: 'sprites/hud/items/clock_pause.png', id: 'clock_pause' },
-    { src: 'sprites/hud/items/airstrike_pause.png', id: 'airstrike_pause' },
-    { src: 'sprites/hud/items/shotgun_pause.png', id: 'shotgun_pause' },
-    { src: 'sprites/hud/items/slicer_pause.png', id: 'slicer_pause' },
-    { src: 'sprites/hud/items/grenade_pause.png', id: 'grenade_pause' },
     { src: 'sprites/hud/items/bombs_icon.png', id: 'bombs_icon' },
     { src: 'sprites/hud/items/toxic_icon.png', id: 'toxic_icon' },
     { src: 'sprites/hud/items/machinegun_icon.png', id: 'machinegun_icon' },
@@ -223,6 +218,8 @@ const images = [
     { src: 'sprites/hud/items/shotgun_icon.png', id: 'shotgun_icon' },
     { src: 'sprites/hud/items/slicer_icon.png', id: 'slicer_icon' },
     { src: 'sprites/hud/items/grenade_icon.png', id: 'grenade_icon' },
+
+    // animations
     { src: 'sprites/effects/animations/invader_green_death/invadergreen_d0.png', id: 'invadergreen_d0' },
     { src: 'sprites/effects/animations/invader_green_death/invadergreen_d1.png', id: 'invadergreen_d1' },
     { src: 'sprites/effects/animations/invader_green_death/invadergreen_d2.png', id: 'invadergreen_d2' },
@@ -378,6 +375,7 @@ const images = [
 ];
 
 const audio = [
+    // soundfx
     { src: 'soundfx/laser.ogg', id: 'laser_sound', type: 'audio/mpeg' },
     { src: 'soundfx/beep.ogg', id: 'beep_sound', type: 'audio/mpeg' },
     { src: 'soundfx/beep_red.ogg', id: 'beep_red_sound', type: 'audio/mpeg' },
@@ -422,6 +420,8 @@ const audio = [
     { src: 'soundfx/appear.ogg', id: 'appear_sound', type: 'audio/mpeg' },
     { src: 'soundfx/snipershot.ogg', id: 'snipershot_sound', type: 'audio/mpeg' },
     { src: 'soundfx/slowmo.ogg', id: 'slowmo_sound', type: 'audio/mpeg' },
+
+    // music
     { src: 'music/musics0.ogg', id: 'musicstage0', type: 'audio/mpeg' },
     { src: 'music/musics1.ogg', id: 'musicstage1', type: 'audio/mpeg' },
     { src: 'music/musics2.ogg', id: 'musicstage2', type: 'audio/mpeg' },
