@@ -49,11 +49,13 @@ export class Player {
             // AUDIO
             game.audiocontroller.playSound('laser');
 
-            // ROCKETS
-            let weapon = game.itemactioncontroller.getWeaponType();
+            // SPRAY - default shooting action while calculating spray if any
+            game.itemactioncontroller.shootSpray();
 
-            // SPRAY
-            game.itemactioncontroller.shootSpray(weapon);
+            // ROCKETS
+            if (game.itemactioncontroller.rocket) {
+                game.itemactioncontroller.shootRocket();
+            }
 
             // SEEKERS
             if (game.enemies.enemiesOnScreen() && game.itemactioncontroller.seekers) {

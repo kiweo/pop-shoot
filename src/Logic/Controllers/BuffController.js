@@ -2,9 +2,9 @@ import { randomInRange } from '../Helpers.js';
 import { game } from '../../../app.js';
 import { BUFFS } from '../../Objects/Buffs.js';
 
-const BUFFDURATION = 15; // in seconds
-
 // buffs are dropped by OrangePackage
+
+const BUFFDURATION = 15; // in seconds
 
 export class BuffController {
     constructor() {

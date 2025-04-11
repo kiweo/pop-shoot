@@ -1,9 +1,9 @@
-// ITEMS ARE DROPPED BY RED PACKAGES
-
 import { game } from '../../../app.js';
 import { Notification } from '../../Effects/Misc/Notification.js';
 import { randomInRange } from '../Helpers.js';
 import { ITEMS } from '../../Objects/Items.js';
+
+// items are dropped by RedPackage
 
 // NOTIFICATIONS COORDINATES & DURATION ON ITEM DROP
 const NOTIFICATION_DURATION = 400; // in ticks. higher = longer

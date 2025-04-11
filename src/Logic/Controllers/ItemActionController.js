@@ -13,15 +13,15 @@ import { getClosestEnemyTo, randomInRange } from '../Helpers.js';
 const AIRSTRIKECHANCE = 10; // % of triggering an airstrike
 const AIRSTRIKERATE = 2; // damage multiplier dealt by airstrike (1 = full damage);
 const BOMBRATE = 0.2; // damage multiplier dealt to other enemies on screen (1 = full damage)
-const DARTSRATE = 0.3; // damage multiplier dealt by darts when stun successful (1 = full damage)
+const DARTSRATE = 0.5; // damage multiplier dealt by darts when stun successful (1 = full damage)
 const DARTSSTUNCHANCE = 15; // % to stun enemy when darts is upgraded
-const EMPRATE = 0.2; // damage multiplier dealt by emp to enemies when player is hit (1 = full damage)
+const EMPRATE = 0.4; // damage multiplier dealt by emp to enemies when player is hit (1 = full damage)
 const MACHINEGUNRATE = 110; // shooting-rate of the machine gun. lower = faster (rate without upgrade is 150)
 const ROCKETCHANCE = 15; // % of firing a rocket
-const ROCKETDAMAGE = 3; // damage multiplier dealth by rocket (1 = full damage)
+const ROCKETDAMAGE = 4; // damage multiplier dealth by rocket (1 = full damage)
 const SLICERCHANCE = 5; // % of dealing slicer crit
 const SLICERRATE = 4; // damage multiplier dealt by slicer
-const SEEKERRATE = 0.5; // damage multiplier dealt by seekers (1 = full damage)
+const SEEKERRATE = 0.7; // damage multiplier dealt by seekers (1 = full damage)
 const SPRAYDISTANCE = 5; // distance between laser streams when spray upgrade is acquired
 const STUNTIME = 1250; // time to stun enemies in ms
 const TOXICRATE = 0.4; // damage multiplier dealt to enemies by toxic slowmo (1 = full damage)
@@ -111,15 +111,6 @@ export class ItemActionController {
         return 1;
     }
 
-    getWeaponType() {
-        const rocketroll = randomInRange(0, 100);
-        if (this.rocket && rocketroll < this.rocketchance) {
-            return Rocket;
-        } else {
-            return BlueLaser;
-        }
-    }
-
     incrementDamageMultiplier() {
         this.dmgMultiplier += 0.5;
     }
@@ -144,30 +135,37 @@ export class ItemActionController {
         game.bluelasers.add(new Dart());
     }
 
+    shootRocket() {
+        const rocketroll = randomInRange(0, 100);
+        if (rocketroll < this.rocketchance) {
+            game.bluelasers.add(new Rocket());
+        }
+    }
+
     shootSeeker() {
         game.bluelasers.add(new Seeker(getClosestEnemyTo(game.player)));
     }
 
-    shootSpray(weapon) {
+    shootSpray() {
         const NORTH = 270;
 
         // if the spray number is even, skew the laser's angle by 2.5 degrees
         let direction = this.spray % 2 ? NORTH - 2.5 : NORTH;
 
         // fire the first laser
-        game.bluelasers.add(new weapon(direction));
+        game.bluelasers.add(new BlueLaser(direction));
 
         // calculate the remaning sprays directions & fire them
         let spraycount = 1;
         for (let i = 0; i < this.spray; i++) {
             // spray left
             if (i % 2) {
-                game.bluelasers.add(new weapon(direction - SPRAYDISTANCE * spraycount));
+                game.bluelasers.add(new BlueLaser(direction - SPRAYDISTANCE * spraycount));
                 spraycount++;
             }
             // spray right
             else {
-                game.bluelasers.add(new weapon(direction + SPRAYDISTANCE * spraycount));
+                game.bluelasers.add(new BlueLaser(direction + SPRAYDISTANCE * spraycount));
             }
         }
     }
