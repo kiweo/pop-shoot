@@ -89,6 +89,7 @@ export class GameState {
                 this.paused = false;
                 window.requestAnimationFrame(gameloop);
             }
+            game.audiocontroller.updateMusic();
         }
     }
 

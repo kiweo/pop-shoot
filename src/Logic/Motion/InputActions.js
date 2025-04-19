@@ -8,12 +8,14 @@ export class InputActions {
     // GAMEPLAY
 
     static shootDown() {
-        if (!game.state.time) {
-            game.state.startGame();
-            CANVAS.requestFullscreen();
+        if (!game.state.paused) {
+            if (!game.state.time) {
+                game.state.startGame();
+                CANVAS.requestFullscreen();
+            }
+            game.player.unsetShoot(); // used to prevent stuck to autoshooting by accident
+            game.player.setShoot();
         }
-        game.player.unsetShoot(); // used to prevent stuck to autoshooting by accident
-        game.player.setShoot();
     }
 
     static shootUp() {
@@ -21,7 +23,9 @@ export class InputActions {
     }
 
     static slowmoDown() {
-        game.state.startSlowmo();
+        if (!game.state.paused) {
+            game.state.startSlowmo();
+        }
     }
 
     static slowmoUp() {
@@ -30,6 +34,8 @@ export class InputActions {
 
     static pauseDown() {
         if (!game.state.over) {
+            game.player.unsetShoot();
+            game.state.stopSlowmo();
             game.state.togglePause();
         } else {
             game.state.replay();

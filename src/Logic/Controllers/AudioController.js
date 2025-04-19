@@ -258,6 +258,9 @@ export class AudioController {
         for (const key in MUSIC) MUSIC[key].pause();
 
         // play corresponding track according to game state
+        if (game.state.paused) {
+            return; // keep everything paused
+        }
         if (game.state.over) {
             MUSIC['gameover'].play();
         } else if (game.player.clock.active) {
